@@ -14,4 +14,4 @@ Este é um projeto didático em Python desenvolvido para simular o fluxo de aten
 ## ⚙️ Como executar o projeto
 1. Clone este repositório:
    ```bash
-   git clone [https://github.com/seu-usuario/energy-bot.git](https://github.com/seu-usuario/energy-bot.git)
+   git clone https://github.com/DayaneDev32/chatbot-concessionaria.git
