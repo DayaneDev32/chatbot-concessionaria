@@ -21,3 +21,30 @@ CLIENTES = {
         "historico_consumo": ["210 kWh", "195 kWh", "205 kWh"]
     }
 }
+
+def obter_cliente(cpf):
+    """Busca um cliente pelo CPF"""
+    if cpf in CLIENTES:
+        cliente = CLIENTES[cpf]
+        status = "pendente" if cliente["fatura_pendente"] else "pago"
+        return {
+            "nome": cliente["nome"],
+            "status": status
+        }
+    return None
+
+
+def obter_fatura(cpf):
+    """Busca a fatura pendente do cliente"""
+    if cpf in CLIENTES and CLIENTES[cpf]["fatura_pendente"]:
+        return CLIENTES[cpf]["fatura_pendente"]
+    return None
+
+
+def obter_historico(cpf):
+    """Retorna o histórico de consumo formatado"""
+    if cpf in CLIENTES:
+        consumos = CLIENTES[cpf]["historico_consumo"]
+        meses = ["Maio/2026", "Abril/2026", "Março/2026"]
+        return dict(zip(meses, consumos))
+    return {}
